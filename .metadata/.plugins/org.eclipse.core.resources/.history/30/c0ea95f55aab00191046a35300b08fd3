@@ -1,0 +1,35 @@
+package com.mcintyre.ers.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.mcintyre.ers.dao.UserRepo;
+import com.mcintyre.ers.model.User;
+
+public class UserController {
+	@Autowired
+	UserRepo repo;
+	
+	@RequestMapping("/home")
+	public String home() {
+		return "home";
+	}
+	
+	// For web services we don't need a model and view object
+	@PostMapping(path="/alien")
+	public User addAlien(@RequestBody String username, @RequestBody String password) {
+		
+		User user = new User();
+
+		return user;
+	}
+
+}

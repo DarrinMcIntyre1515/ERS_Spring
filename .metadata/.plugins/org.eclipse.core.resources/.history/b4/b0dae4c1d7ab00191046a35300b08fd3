@@ -1,0 +1,65 @@
+package com.mcintyre.ers.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.mcintyre.ers.dao.UserRepo;
+import com.mcintyre.ers.model.LoginForm;
+import com.mcintyre.ers.model.User;
+
+@Controller
+public class loginController {
+
+	@Autowired
+	UserRepo repo;
+	
+	@RequestMapping("login")
+	public String login() {
+		return "login";
+	}
+	
+	@RequestMapping(value = "verifyLogin", method = RequestMethod.POST)
+	public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
+	@ModelAttribute("login") LoginForm login) {
+		ModelAndView mav = null;
+		User user = new User(777,"Larry", "lar@aol.com", "pw");
+		if (null != user) {
+			mav = new ModelAndView("welcome");
+			mav.addObject("firstname", user.getUsername());
+		}
+//		} else {
+//			mav = new ModelAndView("login");
+//			mav.addObject("message", "Username or Password is wrong!!");
+//		}
+		return mav;
+	}	
+	
+	
+	
+	
+//	@PostMapping("verifyLogin")
+//	public String successfulLogin(@RequestBody LoginForm lf) {
+//		System.out.println("\n\nHERE!!! \n\n" + lf);
+////		System.out.println("username: " + lf.getName() + " --- password: " + lf.getPassword());
+////		
+////		User usr = repo.findByUsernameAndPassword(lf.getName(), lf.getPassword());
+////		System.out.println("in verifyLogin");
+////		if(usr != null) {
+////			System.out.println("usr was null");
+////			return "home";
+////		}
+////		else {
+////			System.out.println(usr.toString());
+////		}
+//		
+//		return "login";
+//	}
+	
+}
