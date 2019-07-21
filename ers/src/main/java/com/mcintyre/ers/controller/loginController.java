@@ -45,6 +45,20 @@ public class loginController {
 			mav = new ModelAndView("login");
 			mav.addObject("message", "Incorrect username or password.");
 		}
+		
+//		User usr = repo.findByUsernameOrEmail(login.getUsername(), login.getUsername());
+//		
+//		if(usr.getPassword() == login.getPassword()) {
+//			mav = new ModelAndView("welcome");
+//			mav.addObject("firstname", usr.getFirstname());
+//		}
+//		else {
+//			mav = new ModelAndView("login");
+//			mav.addObject("message", "Incorrect username or password.");
+//		}
+		
+		
+		
 		return mav;
 }
 	

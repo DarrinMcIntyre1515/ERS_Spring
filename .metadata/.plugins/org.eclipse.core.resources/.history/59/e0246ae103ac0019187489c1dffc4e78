@@ -1,0 +1,5 @@
+package com.mcintyre.ers.model;
+
+public class Request {
+
+}
