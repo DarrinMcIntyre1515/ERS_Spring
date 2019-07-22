@@ -6,7 +6,7 @@
             <title>Registration</title>
         </head>
         <body>
-            <form:form id="regForm" modelAttribute="user" action="registerProcess" method="post">
+            <form:form id="regForm" modelAttribute="user" action="registerUser" method="post">
                 <table align="center">
                     <tr>
                         <td>
@@ -26,6 +26,14 @@
                     </tr>
                     <tr>
                         <td>
+                            <form:label path="email">Email</form:label>
+                        </td>
+                        <td>
+                            <form:input path="email" name="email" id="email" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <form:label path="firstname">FirstName</form:label>
                         </td>
                         <td>
@@ -41,27 +49,12 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <form:label path="email">Email</form:label>
-                        </td>
-                        <td>
-                            <form:input path="email" name="email" id="email" />
-                        </td>
-                    </tr>
                     <tr>
                         <td>
-                            <form:label path="address">Address</form:label>
+                            <form:label path="rank">Rank</form:label>
                         </td>
                         <td>
-                            <form:input path="address" name="address" id="address" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <form:label path="phone">Phone</form:label>
-                        </td>
-                        <td>
-                            <form:input path="phone" name="phone" id="phone" />
+                            <form:input path="rank" name="rank" id="rank" />
                         </td>
                     </tr>
                     <tr>

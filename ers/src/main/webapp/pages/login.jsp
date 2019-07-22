@@ -35,8 +35,8 @@
                     <tr></tr>
                     <tr>
                         <td></td>
-                        <td><a href="home.jsp">Home</a>
-                        </td>
+                        <td><a href="registration">Register</a>
+                		</td>
                     </tr>
                 </table>
             </form:form>

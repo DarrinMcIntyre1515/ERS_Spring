@@ -22,44 +22,61 @@ public class loginController {
 	UserRepo repo;
 	
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = {"login", ""}, method = RequestMethod.GET)
 	public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mav = new ModelAndView("login");
-		mav.addObject("login", new LoginForm());
-		return mav;
+		ModelAndView mv = new ModelAndView("login");
+		mv.addObject("login", new LoginForm());
+		return mv;
 	}
 	
-//	@RequestMapping(value = "verifyLogin", method = RequestMethod.POST)
+	@RequestMapping(value = "logout", method = RequestMethod.GET)
+	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mv = new ModelAndView("login");
+
+		mv.addObject("login", new LoginForm());
+		mv.addObject("message", "");
+		return mv;
+	}
+	
+	@RequestMapping(value = "registration", method = RequestMethod.GET)
+	public ModelAndView registerUser(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mv = new ModelAndView("register");
+
+		mv.addObject("user", new User());
+		return mv;
+	}
+	
 	@PostMapping(value = "verifyLogin")
 	public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
 			  @ModelAttribute("login") LoginForm login) {
-		ModelAndView mav = null;
-	
-		User user = repo.findByUsernameAndPassword(login.getUsername(), login.getPassword());
-	
-		if (null != user) {
-			mav = new ModelAndView("welcome");
-			mav.addObject("firstname", user.getUsername());
+		ModelAndView mv = null;
+		
+		User usr = repo.findByUsernameOrEmail(login.getUsername(), login.getUsername());
+		
+		if(usr != null && usr.getPassword().contains(login.getPassword())) {
+			mv = new ModelAndView("welcome");
+			mv.addObject("firstname", usr.getFirstname());
 		}
 		else {
-			mav = new ModelAndView("login");
-			mav.addObject("message", "Incorrect username or password.");
-		}
+			mv = new ModelAndView("login");
+			mv.addObject("message", "Incorrect username or password.");
+		}		
 		
-//		User usr = repo.findByUsernameOrEmail(login.getUsername(), login.getUsername());
-//		
-//		if(usr.getPassword() == login.getPassword()) {
-//			mav = new ModelAndView("welcome");
-//			mav.addObject("firstname", usr.getFirstname());
-//		}
-//		else {
-//			mav = new ModelAndView("login");
-//			mav.addObject("message", "Incorrect username or password.");
-//		}
+		return mv;
+	}
+	
+	@PostMapping(value = "registerUser")
+	public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
+			  @ModelAttribute("user") User usr) {
+		ModelAndView mv = null;
 		
+		repo.save(usr);
 		
+		mv = new ModelAndView("login");
+		mv.addObject("login", new LoginForm());
+		mv.addObject("message", "Registration completed.");
 		
-		return mav;
-}
+		return mv;
+	}
 	
 }
