@@ -16,3 +16,11 @@
 1563843721869	Rename resource 'login.jsp'
 1563843727611	Rename resource 'login_old.jsp'
 1563844409093	Delete element
+1563893417239	Delete element
+1563918872617	Delete element
+1563919226859	Move 'js' to 'resources'
+1563920650235	Delete element
+1563920668112	Move 'js' to 'static'
+1563920703358	Delete element
+1563920705392	Delete element
+1563920879193	Rename type 'UserController'
