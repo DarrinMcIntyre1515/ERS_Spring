@@ -18,65 +18,78 @@ import com.mcintyre.ers.model.User;
 @Controller
 public class loginController {
 
-	@Autowired
-	UserRepo repo;
-	
+//	@Autowired
+//	UserRepo repo;
+//	ModelAndView mv = new ModelAndView();
 
-	@RequestMapping(value = {"login", ""}, method = RequestMethod.GET)
-	public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv = new ModelAndView("login");
-		mv.addObject("login", new LoginForm());
-		return mv;
+	@RequestMapping("/")
+	public String home() {
+		return "home";
 	}
 	
-	@RequestMapping(value = "logout", method = RequestMethod.GET)
-	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv = new ModelAndView("login");
-
-		mv.addObject("login", new LoginForm());
-		mv.addObject("message", "");
-		return mv;
+	@RequestMapping("/login")
+	public String loginPage() {
+		return "login";
 	}
 	
-	@RequestMapping(value = "registration", method = RequestMethod.GET)
-	public ModelAndView registerUser(HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv = new ModelAndView("register");
-
-		mv.addObject("user", new User());
-		return mv;
+	@RequestMapping("/logout-success")
+	public String logoutPage() {
+		return "logout";
 	}
 	
-	@PostMapping(value = "verifyLogin")
-	public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
-			  @ModelAttribute("login") LoginForm login) {
-		ModelAndView mv = null;
-		
-		User usr = repo.findByUsernameOrEmail(login.getUsername(), login.getUsername());
-		
-		if(usr != null && usr.getPassword().contains(login.getPassword())) {
-			mv = new ModelAndView("welcome");
-			mv.addObject("firstname", usr.getFirstname());
-		}
-		else {
-			mv = new ModelAndView("login");
-			mv.addObject("message", "Incorrect username or password.");
-		}		
-		
-		return mv;
-	}
 	
-	@PostMapping(value = "registerUser")
-	public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
-			  @ModelAttribute("user") User usr) {
-		ModelAndView mv = null;
-		
-		repo.save(usr);
-		
-		mv = new ModelAndView("login");
-		mv.addObject("login", new LoginForm());
-		mv.addObject("message", "Registration completed.");
-		
-		return mv;
-	}
-	
+//	@RequestMapping(value = {"login", ""}, method = RequestMethod.GET)
+//	public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
+//		mv.setViewName("login");
+//		mv.addObject("login", new LoginForm());
+//		return mv;
+//	}
+//	
+//	@RequestMapping(value = "logout", method = RequestMethod.GET)
+//	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) {
+//		mv.setViewName("logout");
+//
+////		mv.addObject("login", new LoginForm());
+//		mv.addObject("message", "");
+//		return mv;
+//	}
+//	
+//	@RequestMapping(value = "registration", method = RequestMethod.GET)
+//	public ModelAndView registerUser(HttpServletRequest request, HttpServletResponse response) {
+//		mv.setViewName("register");
+//
+//		mv.addObject("user", new User());
+//		return mv;
+//	}
+//	
+//	@PostMapping(value = "verifyLogin")
+//	public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
+//			  @ModelAttribute("login") LoginForm login) {		
+//		User usr = repo.findByUsernameOrEmail(login.getUsername(), login.getUsername());
+//		
+//		if(usr != null && usr.getPassword().contains(login.getPassword())) {
+//			mv.setViewName("welcome");
+//			mv.addObject("firstname", usr.getFirstname());
+//		}
+//		else {
+//			mv.setViewName("login");
+//			mv.addObject("message", "Incorrect username or password.");
+//		}		
+//		
+//		return mv;
+//	}
+//	
+//	@PostMapping(value = "registerUser")
+//	public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
+//			  @ModelAttribute("user") User usr) {
+//		mv = null;
+//		
+//		repo.save(usr);
+//		
+//		mv = new ModelAndView("login");
+//		mv.addObject("login", new LoginForm());
+//		mv.addObject("message", "Registration completed.");
+//		
+//		return mv;
+//	}
 }

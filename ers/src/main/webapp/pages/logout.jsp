@@ -3,21 +3,24 @@
     <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta http-equiv="Refresh" content="3;url=login.jsp">
         <title>Welcome</title>
     </head>
     <body>
         <table>
             <tr>
-                <td>Welcome ${firstname}</td>
+                <td>You have been successfully logged out. You will be redirected to login page in 3 seconds.</td>
             </tr>
-            <tr>
-            </tr>
-            <tr>
-            </tr>
-            <tr>
-                <td><form action="logout"><button>Log Out</button></form>
-                </td>
-            </tr>
+
         </table>
     </body>
     </html>
+    
+<script>
+$(document).ready(function () {
+    // Handler for .ready() called.
+    window.setTimeout(function () {
+        location.href = "https://www.google.com";
+    }, 5000);
+});
+</script>
