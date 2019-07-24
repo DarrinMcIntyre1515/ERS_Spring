@@ -32,8 +32,6 @@ public class loginController {
 //	@PostMapping(value = "registerUser")
 //	public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
 //			  @ModelAttribute("user") User usr) {
-//		mv = null;
-//		
 //		repo.save(usr);
 //		
 //		mv = new ModelAndView("login");

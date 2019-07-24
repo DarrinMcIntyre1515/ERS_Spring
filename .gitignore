@@ -1,6 +1,6 @@
 # Eclipse
 .metadata
-.metadata/*
+**/metadata/*
 .recommenders
 .recommenders/*
 .classpath
