@@ -23,14 +23,5 @@ public class ConsumeController {
 		System.out.println(quote.getValue().getQuote() + "\n");
 		return quote;
 	}
-	
-	@PostMapping("/testLogin")
-	public User verifyUser(@RequestBody String username, @RequestBody String password) {
-		System.out.println("In verifyUser!");
-		User user = new User();
-
-		return user;
-	}
-
 }
 
