@@ -1,5 +1,0 @@
-package com.mcintyre.ers.dao;
-
-public interface usersDao {
-
-}
