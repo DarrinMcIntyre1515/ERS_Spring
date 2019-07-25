@@ -9,8 +9,6 @@ Spring Boot, Data, MVC, and Security (BCrypt encoding).
 
 HTLM5, CSS, JavaScript, jQuery, AJAX.
 
-(Will be moving to Angular5+)
-
 
 # Getting Started
 - Install Spring Tools 4 - for Spring Boot (aka Spring Tool Suite 4) from the eclipse Marketplace.
