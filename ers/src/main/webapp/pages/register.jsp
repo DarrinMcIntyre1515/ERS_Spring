@@ -1,75 +1,41 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-    <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-        <html>
-        <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-            <title>Registration</title>
-        </head>
-        <body>
-            <form:form id="regForm" modelAttribute="user" action="registerUser" method="post">
-                <table align="center">
-                    <tr>
-                        <td>
-                            <form:label path="username">Username</form:label>
-                        </td>
-                        <td>
-                            <form:input path="username" name="username" id="username" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <form:label path="password">Password</form:label>
-                        </td>
-                        <td>
-                            <form:password path="password" name="password" id="password" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <form:label path="email">Email</form:label>
-                        </td>
-                        <td>
-                            <form:input path="email" name="email" id="email" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <form:label path="firstname">FirstName</form:label>
-                        </td>
-                        <td>
-                            <form:input path="firstname" name="firstname" id="firstname" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <form:label path="lastname">LastName</form:label>
-                        </td>
-                        <td>
-                            <form:input path="lastname" name="lastname" id="lastname" />
-                        </td>
-                    </tr>
-                    <tr>
-                    <tr>
-                        <td>
-                            <form:label path="rank">Rank</form:label>
-                        </td>
-                        <td>
-                            <form:input path="rank" name="rank" id="rank" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <form:button id="register" name="register">Register</form:button>
-                        </td>
-                    </tr>
-                    <tr></tr>
-                    <tr>
-                        <td></td>
-                        <td><a href="home.jsp">Home</a>
-                        </td>
-                    </tr>
-                </table>
-            </form:form>
-        </body>
-        </html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Registration</title>
+	<link rel="stylesheet" href="/css/formStyle.css">
+</head>
+<body>
+	<div>
+		<form action="/registration" method="post">
+			<label for="uname">Username</label>
+			<input type="text" id="uname" name="username" placeholder="Username..."> 
+			
+			<label for="fname">Email</label> 
+			<input type="text" id="email" name="email" placeholder="Email...">
+			
+			<label for="pw">Password</label>
+			<input type="password" id="pw" name="password" placeholder="Password...">
+			
+			<label for="fname">First Name</label>
+			<input type="text" id="fname" name="firstname" placeholder="First name...">
+			
+			<label for="lname">Last Name</label>
+			<input type="text" id="lname" name="lastname" placeholder="Last name...">
+			
+			<label for="rank">Job Title</label>
+			<select id="rank" name="rank">
+				<option value="0">Employee</option>
+				<option value="1">Manager</option>
+			</select> <input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+</html>
+
+
+<script>
+
+</script>

@@ -1,11 +1,25 @@
 package com.mcintyre.ers.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.mcintyre.ers.dao.UserRepo;
+import com.mcintyre.ers.model.User;
 
 @Controller
 public class loginController {
 
+	@Autowired
+	UserRepo repo;
+	
+	@Autowired
+	PasswordEncoder pwEncoder;
+	
 	@RequestMapping("/")
 	public String home() {
 		return "home";
@@ -21,23 +35,16 @@ public class loginController {
 		return "logout";
 	}
 	
-//	@RequestMapping(value = "registration", method = RequestMethod.GET)
-//	public ModelAndView registerUser(HttpServletRequest request, HttpServletResponse response) {
-//		mv.setViewName("register");
-//
-//		mv.addObject("user", new User());
-//		return mv;
-//	}
-//	
-//	@PostMapping(value = "registerUser")
-//	public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
-//			  @ModelAttribute("user") User usr) {
-//		repo.save(usr);
-//		
-//		mv = new ModelAndView("login");
-//		mv.addObject("login", new LoginForm());
-//		mv.addObject("message", "Registration completed.");
-//		
-//		return mv;
-//	}
+	@RequestMapping("/register")
+	public String registerUser() {
+		return "register";
+	}
+	
+	@PostMapping("/registration")
+	public String registration(HttpServletRequest req, User usr){
+		usr.setPassword(pwEncoder.encode(usr.getPassword()));
+		repo.save(usr);
+		
+		return "login";
+	}
 }

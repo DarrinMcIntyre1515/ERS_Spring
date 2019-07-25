@@ -4,9 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="/css/formStyle.css">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Login</title>
 </head>
 <body>
 	${SPRING_SECURITY_LAST_EXCEPTION.message}
@@ -26,7 +25,7 @@
 			<tr></tr>
 			<tr>
 				<td></td>
-				<td><a href="register">Register</a></td>
+				<td><a href="registration">Register</a></td>
 			</tr>
 		</table>
 	</form>
