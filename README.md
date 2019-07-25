@@ -20,11 +20,7 @@ HTLM5, CSS, JavaScript, jQuery, AJAX.
   - Create the ERS DB in MySQL.
   - Set environment variables, there are 3 for the DB in application.properties.
 4. Generate your DB tables.
+-
   - In the application properties file, change the ddl-auto from update to create.
   - Run the application as a Spring Boot App.
   - Revisit step 4a, and change the ddl-auto from create back to update.
-  
-- Dashes work just as well
-- And if you have sub points, put two spaces before the dash or star:
-  - Like this
-  - And this
