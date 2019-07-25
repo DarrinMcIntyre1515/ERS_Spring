@@ -24,3 +24,7 @@ HTLM5, CSS, JavaScript, jQuery, AJAX.
   - Run the application as a Spring Boot App.
   - Revisit step 4a, and change the ddl-auto from create back to update.
   
+- Dashes work just as well
+- And if you have sub points, put two spaces before the dash or star:
+  - Like this
+  - And this
