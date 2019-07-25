@@ -14,22 +14,13 @@ HTLM5, CSS, JavaScript, jQuery, AJAX.
 
 # Getting Started
 1. Install Spring Tools 4 - for Spring Boot (aka Spring Tool Suite 4) from the eclipse Marketplace.
-
 2. Clone the repository and import the project.
-
 3. Setup MySQL environment.
-
   - Create a user with full object rights and CREATE/ALTER DDL rights at minimum.
-  
   - Create the ERS DB in MySQL.
-  
   - Set environment variables, there are 3 for the DB in application.properties.
-  
-4. Generate your DB tables!
-
+4. Generate your DB tables.
   - In the application properties file, change the ddl-auto from update to create.
-  
   - Run the application as a Spring Boot App.
-  
   - Revisit step 4a, and change the ddl-auto from create back to update.
   
