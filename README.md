@@ -5,7 +5,7 @@ Expense Reimbursement System (ERS) manages the process of reimbursing employees 
 
 
 # Technologies
-Spring Boot, Data, MVC, and Security.
+Spring Boot, Data, MVC, and Security (BCrypt encoding).
 
 HTLM5, CSS, JavaScript, jQuery, AJAX.
 
