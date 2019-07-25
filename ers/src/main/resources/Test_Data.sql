@@ -23,10 +23,10 @@ value(4,null,10000,'visiting family',100,'travel');
 
 
 insert into users(usr_rank,usr_username,usr_firstname,usr_lastname,usr_email,usr_password,usr_requests)
-values(0,'Lei1','Lei','Raion','lei@gmail.com','pw', null);
+values(0,'Lei1','Lei','Raion','lei@gmail.com','$2a$10$6MnKGszMfq3Y/xjrma1Z1uKzTo2JOTkiGkk7pB7JNtQGWEDWPjuYm', null);
 insert into users(usr_rank,usr_username,usr_firstname,usr_lastname,usr_email,usr_password,usr_requests)
-values(0,'Kiba1','Michael','Holler','mh@gmail.com','pw', null);
+values(0,'Kiba1','Michael','Holler','mh@gmail.com','$2a$10$6MnKGszMfq3Y/xjrma1Z1uKzTo2JOTkiGkk7pB7JNtQGWEDWPjuYm', null);
 insert into users(usr_rank,usr_username,usr_firstname,usr_lastname,usr_email,usr_password,usr_requests)
-values(0,'J55','Jayce','Bheart','JB55@gmail.com','pw', null);
+values(0,'J55','Jayce','Bheart','JB55@gmail.com','$2a$10$6MnKGszMfq3Y/xjrma1Z1uKzTo2JOTkiGkk7pB7JNtQGWEDWPjuYm', null);
 insert into users(usr_rank,usr_username,usr_firstname,usr_lastname,usr_email,usr_password,usr_requests)
-values(1,'old1','Eugene','Rotwell','old1@aol.com','pw', null);
+values(1,'old1','Eugene','Rotwell','old1@aol.com','$2a$10$6MnKGszMfq3Y/xjrma1Z1uKzTo2JOTkiGkk7pB7JNtQGWEDWPjuYm', null);

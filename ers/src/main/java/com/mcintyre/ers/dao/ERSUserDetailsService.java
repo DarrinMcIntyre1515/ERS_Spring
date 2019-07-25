@@ -15,8 +15,6 @@ public class ERSUserDetailsService implements UserDetailsService{
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		
-		
 		User user = repo.findByUsernameOrEmail(username, username);
 		
 		if(user == null) {
