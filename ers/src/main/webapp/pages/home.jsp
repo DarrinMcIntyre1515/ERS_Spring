@@ -11,7 +11,7 @@
 <body>
 	<div>
 		<p class="quote">Quote:</p>
-		<p>Welcome ${firstname}!</p>
+		<p class="username">Welcome </p>
 		
 		<form action="logout">
 			<button>Log Out</button>

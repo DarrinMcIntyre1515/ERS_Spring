@@ -3,10 +3,14 @@ package com.mcintyre.ers.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mcintyre.ers.dao.UserRepo;
 import com.mcintyre.ers.model.User;
@@ -47,4 +51,21 @@ public class loginController {
 		
 		return "login";
 	}
+	
+	@RequestMapping(value = "/username", method = RequestMethod.GET)
+    @ResponseBody
+    public User currentUserName() {
+		User usr;
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		
+		if (principal instanceof UserDetails) {
+		  String username = ((UserDetails)principal).getUsername();
+		  usr = repo.findByUsernameOrEmail(username, username);
+		} 
+		else {
+		  usr = null;
+		}
+		
+		return usr;
+    }
 }
